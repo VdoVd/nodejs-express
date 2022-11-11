@@ -23,6 +23,7 @@ const start = async () =>{
             console.log(`server is listening on port ${port}...`)
         })
     }catch (err){
+        console.log('error happen in app.js')
         console.log(err)
     }
 }
