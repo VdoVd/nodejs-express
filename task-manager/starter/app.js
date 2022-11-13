@@ -2,7 +2,7 @@ const connectDB=require('./db/connect')
 const express=require('express')
 const app=express()
 const tasks=require('./routes/tasks')
-
+const notFound = require('./middleware/not-found')
 require('dotenv').config()
 //middleware
 app.use(express.json())
@@ -10,6 +10,8 @@ app.use(express.json())
 app.get('/hello',(req,res)=>{
     res.send('hello')
 })
+
+app.use(notFound)
 
 app.use('/api/v1/tasks',tasks)
 
