@@ -1,9 +1,9 @@
 const asyncWrapper = (fn) => {
     return async (req,res,next)=>{
         try {
-            await fn(res,req,next)
+            await fn(req,res,next)
         }catch (err){
-            next(err)
+            next(err )
         }
     }
 }
