@@ -10,6 +10,7 @@ app.use(express.json())
 app.get('/hello',(req,res)=>{
     res.send('hello')
 })
+app.use(express.static('./public'));
 app.use('/api/v1/tasks',tasks)
 app.use(notFound)
 app.use(errorHandlerMiddleware)
